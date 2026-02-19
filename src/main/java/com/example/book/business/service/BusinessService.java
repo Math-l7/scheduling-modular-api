@@ -20,9 +20,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class BusinessService {
 
-    // Após conclusão da camada Staff, incluir validação de Business if(staff) nos
-    // metodos de update e get
-
     private final BusinessRepository businessRepository;
     private final WorkingHoursRepository workingHoursRepository;
     private final StaffAccessService staffAccessService;

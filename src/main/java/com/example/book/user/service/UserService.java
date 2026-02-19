@@ -65,9 +65,6 @@ public class UserService {
         return users.stream().map(u -> toDTO(u)).toList();
     }
 
-    // reforçado com preAuthorize e ContextHolder para o changer no controller
-    // futuramente
-
     public UserReturnDTO changePassword(Integer userId, ChangePasswordDTO passwords) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado."));

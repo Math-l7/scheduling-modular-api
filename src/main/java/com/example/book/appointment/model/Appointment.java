@@ -53,20 +53,19 @@ public class Appointment {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private AppointmentStatus status;
+    private AppointmentStatus status = AppointmentStatus.SCHEDULED;
 
     @ManyToOne
     @JoinColumn(name = "service_id", nullable = false)
     private ServiceCatalog service;
 
-    public Appointment(Business business, ServiceCatalog service, Staff staff, User client, AppointmentStatus status,
+    public Appointment(Business business, ServiceCatalog service, Staff staff, User client,
             LocalDateTime startTime,
             LocalDateTime endTime) {
         this.business = business;
         this.service = service;
         this.staff = staff;
         this.client = client;
-        this.status = status;
         this.startTime = startTime;
         this.endTime = endTime;
     }

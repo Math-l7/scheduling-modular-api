@@ -74,7 +74,7 @@ public class AppointmentService {
 
         appointmentValidator.validateCreation(context);
 
-        Appointment appointment = new Appointment(business, serviceCatalog, staff, client, AppointmentStatus.SCHEDULED,
+        Appointment appointment = new Appointment(business, serviceCatalog, staff, client,
                 start, end);
         appointmentRepository.save(appointment);
         return toDto(appointment);
